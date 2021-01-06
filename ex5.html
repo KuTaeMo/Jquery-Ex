@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        ol {
+            border: 5px solid red;
+            padding: 20px;
+        }
+
+        li {
+            border: 2px solid blue;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ol id="items">
+        <li id="item-1">List item 1</li>
+        <li id="item-2">List item 2</li>
+        <li id="item-3">List item 3</li>
+
+    </ol>
+
+    <button id="btnBefore">before</button>
+    <button id="btnBefore2">before2</button>
+    <button id="btnAfter">after</button>
+    <button id="btnAfter2">after2</button>
+    <button id="btnAppend">append</button>
+    <button id="btnPrepend">prepend</button>
+
+    <script>
+        var num = 1;
+        var num1 = 1;
+        var num2 = 1;
+        var num3 = 1;
+        $("#btnBefore").click(function () {
+            $("#items").before(" <b>before</b>.");
+        });
+
+        $("#btnAfter").click(function () {
+            $("#items").after("<b>after</b>");
+        });
+
+        $("#btnBefore2").click(function () {
+            $("#item-1").before(" <li>before" + num3 + "</li>");
+            num3++;
+        });
+
+        $("#btnAfter2").click(function () {
+            $("#item-3").after("<li>after" + num + "</li>");
+            num = num + 1;
+        });
+
+        $("#btnAppend").click(function () {
+            $("#items").append("<li>append" + num1 + "</li>");
+            num1++;
+        });
+
+        $("#btnPrepend").click(function () {
+            $("#items").prepend("<li>prepend" + num2 + "</li>");
+            num2++;
+        });
+    </script>
+</body>
+
+</html>
